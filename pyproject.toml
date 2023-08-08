@@ -1,0 +1,166 @@
+# This project was generated with Unknown using template: https://github.com/beeware/briefcase-template@v0.3.14
+[project]
+name = "FotoGenea"
+version = "0.0.1"
+requires-python = ">=3.8"
+readme = "README.md"
+dependencies = [
+    "pyside6~=6.2",
+    "pillow>=9.0.0",
+    "pyqt6>=6.5.0"
+]
+
+[project.optional-dependencies]
+dev = [
+    "pre-commit"
+]
+tests = [
+    "pytest>=7.0",
+    "coverage",
+]
+
+[build-system]
+requires = [
+    "setuptools>61",
+    "wheel",
+]
+build-backend = "setuptools.build_meta"
+
+[tool.briefcase]
+project_name = "FotoGenea"
+bundle = "eu.martinortiz"
+version = "0.0.1"
+url = "https://martinortiz.eu/fotogenea"
+license = "GNU General Public License v3 or later (GPLv3+)"
+author = "Manuel Martin-Ortiz"
+author_email = "mmartinortiz@gmail.com"
+
+[tool.briefcase.app.fotogenea]
+formal_name = "FotoGenea"
+description = "An application for setting the EXIF year to scanned pictures"
+long_description = """More details about the app should go here.
+"""
+icon = "src/fotogenea/resources/fotogenea"
+sources = [
+    "src/fotogenea",
+]
+test_sources = [
+    "tests",
+]
+
+requires = [
+    "pyside6~=6.2",
+    "pillow>=9.0.0",
+    "pyqt6>=6.5.0"
+]
+test_requires = [
+    "pytest",
+]
+
+[tool.briefcase.app.fotogenea.macOS]
+requires = [
+    "std-nslog~=1.0.0"
+]
+
+[tool.briefcase.app.fotogenea.linux]
+requires = [
+]
+
+[tool.briefcase.app.fotogenea.linux.system.debian]
+system_requires = [
+]
+
+system_runtime_requires = [
+    # Derived from https://doc.qt.io/qt-6/linux-requirements.html
+    "libxrender1",
+    "libxcb-render0",
+    "libxcb-render-util0",
+    "libxcb-shape0",
+    "libxcb-randr0",
+    "libxcb-xfixes0",
+    "libxcb-xkb1",
+    "libxcb-sync1",
+    "libxcb-shm0",
+    "libxcb-icccm4",
+    "libxcb-keysyms1",
+    "libxcb-image0",
+    "libxcb-util1",
+    "libxkbcommon0",
+    "libxkbcommon-x11-0",
+    "libfontconfig1",
+    "libfreetype6",
+    "libxext6",
+    "libx11-6",
+    "libxcb1",
+    "libx11-xcb1",
+    "libsm6",
+    "libice6",
+    "libglib2.0-0",
+    "libgl1",
+    "libegl1-mesa",
+    "libdbus-1-3",
+    "libgssapi-krb5-2",
+]
+
+[tool.briefcase.app.fotogenea.linux.system.rhel]
+system_requires = [
+]
+
+system_runtime_requires = [
+    "qt6-qtbase-gui",
+]
+
+[tool.briefcase.app.fotogenea.linux.system.arch]
+system_requires = [
+    "qt6-base",
+]
+
+system_runtime_requires = [
+    "qt6-base",
+]
+
+[tool.briefcase.app.fotogenea.linux.appimage]
+manylinux = "manylinux2014"
+
+system_requires = [
+# ?? FIXME
+]
+linuxdeploy_plugins = []
+
+[tool.briefcase.app.fotogenea.linux.flatpak]
+flatpak_runtime = "org.kde.Platform"
+flatpak_runtime_version = "6.4"
+flatpak_sdk = "org.kde.Sdk"
+
+[tool.briefcase.app.fotogenea.windows]
+requires = []
+
+# Mobile deployments
+[tool.briefcase.app.fotogenea.iOS]
+supported = false
+
+[tool.briefcase.app.fotogenea.android]
+supported = false
+
+# Web deployments
+[tool.briefcase.app.fotogenea.web]
+supported = false
+
+[tool.isort]
+profile = "black"
+src_paths = ["tests", "src"]
+known_third_parties = ["pytest"]
+
+[tool.pytest.ini_options]
+minversion = "7.0"
+addopts = "-ra -q"
+testpaths = ["tests"]
+pythonpath = ["src"]
+
+[tool.commitizen]
+version = "0.0.1"
+tag_format = "$version"
+version_files = [
+    "pyproject.toml",
+    "src/fotogenea/__init__.py"
+]
