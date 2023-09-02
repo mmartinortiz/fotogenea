@@ -12,7 +12,8 @@ Create a Python virtual environment and install [briefcase](https://beeware.org/
 python3 -m venv venv
 
 # Activate the virtual environment and run
-pip install --upgrade pip briefcase
+pip install --upgrade pip briefcase pre-commit tox
+pre-commit install --install-hooks
 ```
 
 Run the development version with
