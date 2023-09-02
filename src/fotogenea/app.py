@@ -2,7 +2,6 @@
 An application for setting the EXIF year to scanned pictures
 """
 import sys
-
 from importlib import metadata as importlib_metadata
 
 from PySide6 import QtWidgets
