@@ -1,8 +1,10 @@
-import pytest
 import tempfile
+from datetime import datetime
+
+import pytest
 from PIL import Image
 from PIL.ExifTags import TAGS
-from datetime import datetime
+
 from fotogenea.utils import update_exif_creation_date
 
 

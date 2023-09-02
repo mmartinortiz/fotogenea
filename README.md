@@ -6,7 +6,7 @@ In other words, FotoGenea is an application for setting the EXIF year to scanned
 
 ## Development
 
-Create a Python virtual environment and install [briefcase](<https://beeware.org/project/projects/tools/briefcase/>):
+Create a Python virtual environment and install [briefcase](https://beeware.org/project/projects/tools/briefcase/):
 
 ```bash
 python3 -m venv venv
@@ -15,9 +15,8 @@ python3 -m venv venv
 pip install --upgrade pip briefcase
 ```
 
-Run the development version with 
+Run the development version with
 
 ```bash
 briefcase dev
 ```
-
